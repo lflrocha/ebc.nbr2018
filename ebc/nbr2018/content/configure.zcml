@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="ebc.nbr2018">
+
+  <!-- configure your content components here -->
+  
+  <!-- -*- extra stuff goes here -*- -->
+  <class class=".videodoitvp.VideodoITVP">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IVideodoITVP"
+        />
+  </class>
+  <class class=".videodoyoutube.Videodoyoutube">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IVideodoyoutube"
+        />
+  </class>
+
+</configure>

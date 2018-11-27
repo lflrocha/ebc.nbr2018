@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="NBR 2018">
+
+ <object name="ebc_nbr2018_assets"
+    meta_type="Filesystem Directory View"
+    directory="ebc.nbr2018:skins/ebc_nbr2018_assets"/>
+ <object name="ebc_nbr2018_templates"
+    meta_type="Filesystem Directory View"
+    directory="ebc.nbr2018:skins/ebc_nbr2018_templates"/>
+
+
+ <skin-path name="NBR 2018" based-on="Sunburst Theme">
+  <layer name="ebc_nbr2018_assets"
+     insert-after="custom"/>
+  <layer name="ebc_nbr2018_templates"
+     insert-after="ebc_nbr2018_assets"/>
+ </skin-path>
+
+</object>

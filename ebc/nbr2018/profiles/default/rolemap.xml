@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<rolemap>
+  <permissions>
+    <!-- -*- extra stuff goes here -*- -->
+    <permission name="ebc.nbr2018: Add Video do ITVP" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+    <permission name="ebc.nbr2018: Add Video do youtube" acquire="False">
+      <role name="Manager" />
+      <role name="Contributor" />
+    </permission>
+  </permissions>
+</rolemap>
