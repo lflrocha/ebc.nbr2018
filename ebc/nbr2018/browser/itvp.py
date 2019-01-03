@@ -28,6 +28,7 @@ class ItvpView(BrowserView):
         videos = feed.split('<item>')
         vet = []
         for video in videos:
+            
             titulo = ''
             descricao = ''
             link = ''
@@ -35,14 +36,17 @@ class ItvpView(BrowserView):
             linhas = video.split('\n')
             for linha in linhas:
                 linha = linha.strip()
-                if linha.startswith('<title>'):
-                    titulo = h.unescape(linha.replace('<title>','').replace('</title>','')).decode('latin-1')
-                elif linha.startswith('<link>'):
-                    link = h.unescape(linha.replace('<link>','').replace('</link>',''))
-                elif linha.startswith('<dc:date>'):
-                    data = h.unescape(linha.replace('<dc:date>','').replace('</dc:date>',''))
-                elif linha.startswith('<description>'):
-                    descricao = h.unescape(linha.replace('<description>','').replace('</description>',''))
+                try:
+                    if linha.startswith('<title>'):
+                        titulo = h.unescape(linha.replace('<title>','').replace('</title>','')).decode('latin-1')
+                    elif linha.startswith('<link>'):
+                        link = h.unescape(linha.replace('<link>','').replace('</link>',''))
+                    elif linha.startswith('<dc:date>'):
+                        data = h.unescape(linha.replace('<dc:date>','').replace('</dc:date>',''))
+                    elif linha.startswith('<description>'):
+                        descricao = h.unescape(linha.replace('<description>','').replace('</description>',''))
+                except:
+                    pass
             if data:
                 vet.append({'titulo': titulo, 'link': link, 'data': data, 'descricao': descricao})
         return vet
@@ -65,10 +69,6 @@ class ItvpView(BrowserView):
             hora = aux[1]
             hora = hora[:5]
             dt = DateTime(data + ' ' + hora)
-            print titulo
-            print dt
-            dt = DateTime(dt, 'GMT-2')
-            print dt
             link = video['link']
             id = link.split('?')[1]
             id = id.split('&selected_page')
