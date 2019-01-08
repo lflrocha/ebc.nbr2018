@@ -1,0 +1,110 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+  <div metal:fill-slot="content-core">
+    <metal:block define-macro="content-core"
+                 tal:define="kssClassesView context/@@kss_field_decorator_view;
+                             getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                             templateId template/getId">
+
+        <div metal:define-macro="text-field-view"
+             id="parent-fieldname-text" class="stx"
+             tal:define="kss_class python:getKssClasses('text',
+                         templateId=templateId, macro='text-field-view');
+                         has_text exists:context/aq_explicit/getText;
+                         text python:has_text and here.getText() or ''"
+             tal:condition="text"
+             tal:attributes="class python:context.Format() in ('text/structured', 'text/x-rst', ) and 'stx' + kss_class or 'plain' + kss_class">
+            <div metal:define-slot="inside" tal:replace="structure text">The body</div>
+        </div>
+
+        <metal:listingmacro define-macro="listing">
+        <tal:results define="b_start python:request.get('b_start', 0);
+                             batch python:context.results(b_start=b_start);
+                             site_properties context/portal_properties/site_properties;
+                             use_view_action site_properties/typesUseViewActionInListings|python:();
+                             isAnon context/@@plone_portal_state/anonymous;
+                             normalizeString nocall: context/plone_utils/normalizeString;
+                             toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                             show_about python:not isAnon or site_properties.allowAnonymousViewAbout;
+                             navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                             pas_member context/@@pas_member;">
+
+
+
+        <tal:listing condition="batch">
+
+          <div id="banner">
+            <p class="titulo">Cadastre-se</p>
+            <p class="descricao">Baixe aqui gratuitamente os conteúdos audiovisuais do governo federal. Tenha acesso aos eventos e coletivas na íntegra e sonoras de autoridades do Poder Executivo Federal. Para fazer o download é preciso se cadastrar.</p>
+            <p class="formulario"><a href="#" tal:attributes="href string:${context/portal_url}/cadastro">Crie seu login</a></p>
+          </div>
+
+            <dl metal:define-slot="entries" id="programa">
+                <tal:entry tal:repeat="item batch" metal:define-macro="entries">
+                <tal:block tal:define="item_url item/getURL;
+                                       item_id item/getId;
+                                       item_description item/Description;
+                                       item_modified item/ModificationDate;
+                                       item_created item/CreationDate;
+                                       item_videoid item/videoid">
+                    <metal:block define-slot="entry">
+                    <dt metal:define-macro="listitem"  class="item">
+                      <div class="thumbVideo">
+                        <a href="#"
+                           tal:attributes="href python:item_url+'/view' or item_url">
+                            <img tal:attributes="src string:http://df.itvrp.ebc.com.br:80/thumb?vspace=145350781&cid=$item_videoid&node=EBC-DF&domain=TVBRASIL&selected_page=1&all_vs=false" />
+                        </a>
+                      </div>
+                      <p>
+                        <span class="data" tal:content="python:toLocalizedTime(item_created,long_format=1)">August 16, 2001 at 23:35:59</span>
+                         <br>
+                        <span class="titulo" tal:content="item/Title" />
+                      </p>
+
+                    </dt>
+
+                </metal:block>
+                </tal:block>
+                </tal:entry>
+            </dl>
+
+            <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+        </tal:listing>
+        <metal:empty metal:define-slot="no_items_in_listing">
+            <p class="discreet"
+               tal:condition="not: batch"
+               i18n:translate="description_no_items_in_folder">
+                There are currently no items in this folder.
+            </p>
+        </metal:empty>
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <filter id="duotone_peachypink">
+            <feColorMatrix type="matrix" result="grayscale"
+              values="1 0 0 0 0
+                      1 0 0 0 0
+                      1 0 0 0 0
+                      0 0 0 1 0" >
+            </feColorMatrix>
+            <feComponentTransfer color-interpolation-filters="sRGB" result="duotone">
+              <feFuncR type="table" tableValues="0.0863 0.0941 "></feFuncR>
+              <feFuncG type="table" tableValues="0.0824 0.8000 "></feFuncG>
+              <feFuncB type="table" tableValues="0.2980 0.8549 "></feFuncB>
+              <feFuncA type="table" tableValues="0 1"></feFuncA>
+            </feComponentTransfer>
+          </filter>
+        </svg>
+        </tal:results>
+        </metal:listingmacro>
+
+    </metal:block>
+  </div>
+</body>
+</html>

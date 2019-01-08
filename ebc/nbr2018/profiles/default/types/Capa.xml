@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
-<object name="Video do ITVP"
+<object name="Capa"
    meta_type="Factory-based Type Information with dynamic views"
    i18n:domain="ebc.nbr2018" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">Video do ITVP</property>
+  <property name="title" i18n:translate="">Capa</property>
   <property name="description"
-    i18n:translate=""></property>
-  <property name="content_meta_type">VideodoITVP</property>
-  <property name="content_icon">itvp_icon.png</property>
+    i18n:translate="">Description of the Example Type</property>
+  <property name="content_meta_type">Capa</property>
+  <property name="content_icon">document_icon.gif</property>
   <property name="product">ebc.nbr2018</property>
-  <property name="factory">addVideodoITVP</property>
+  <property name="factory">addCapa</property>
   <property name="immediate_view">atct_edit</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">False</property>
   <property name="allow_discussion">False</property>
-  <property name="default_view">tpl_itvp_view</property>
+  <property name="default_view">base_view</property>
   <property name="view_methods">
     <element value="base_view" />
   </property>

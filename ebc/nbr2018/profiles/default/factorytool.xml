@@ -10,6 +10,8 @@
 <object name="portal_factory" meta_type="Plone Factory Tool">
   <factorytypes>
     <!-- -*- extra stuff goes here -*- -->
+    <type portal_type="Capa" />
+    <type portal_type="Cadastro" />
     <type portal_type="Video do ITVP" />
     <type portal_type="Video do youtube" />
   </factorytypes>

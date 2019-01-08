@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+      <div metal:fill-slot="javascript_head_slot" tal:omit-tag="">
+        <link href="http://vjs.zencdn.net/4.7/video-js.css" rel="stylesheet">
+        <script src="http://vjs.zencdn.net/4.7/video.js"></script>
+      </div>
+
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+
+      <tal:def define="videoId context/getVideoid;
+                       download python:str(int(videoId)+1)">
+        <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" width="640" height="480"
+          tal:attributes="poster string:http://df.itvrp.ebc.com.br:80/thumb?vspace=145350781&cid=$videoId&node=EBC-DF&domain=TVBRASIL&selected_page=1&all_vs=false" data-setup="{}">
+          <div tal:replace="structure context/getItvpLink" />
+        </video>
+
+      <p>Para fazer o download, faça seu <a href="#" tal:attributes="href string:${context/portal_url}/cadastro" target="_blank">cadastro</a>. Se você já tem usuário e senha, clique
+<a tal:attributes="href string:http://df.itvrp.ebc.com.br:9998/TVBRASIL.EBC-DF.$download">aqui</a>.</p>
+      </tal:def>
+    </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
     <metal:block fill-slot="content-core">
         <div>
             <h1>
-                <a tal:attributes="href string:${context/absolute_url}/videos" tal:content="view/status">vídeos foram importados do Youtube.</a>
+                <a tal:attributes="href string:${context/absolute_url}/itvp" tal:content="view/status">vídeos foram importados do ITVP.</a>                
             </h1>
         </div>
     </metal:block>

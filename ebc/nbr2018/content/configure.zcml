@@ -6,6 +6,18 @@
   <!-- configure your content components here -->
   
   <!-- -*- extra stuff goes here -*- -->
+  <class class=".capa.Capa">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.ICapa"
+        />
+  </class>
+  <class class=".cadastro.Cadastro">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.ICadastro"
+        />
+  </class>
   <class class=".videodoitvp.VideodoITVP">
     <require
         permission="zope2.View"

@@ -1,0 +1,696 @@
+/***************************************************
+ Fontes
+***************************************************/
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('/nbr/fonts/Metropolis-Thin.woff2') format('woff2'),
+        url('/nbr/fonts/Metropolis-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('/nbr/fonts/Metropolis-Light.woff2') format('woff2'),
+        url('/nbr/fonts/Metropolis-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('/nbr/fonts/Metropolis-Regular.woff2') format('woff2'),
+        url('/nbr/fonts/Metropolis-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis Semi';
+    src: url('/nbr/fonts/Metropolis-SemiBold.woff2') format('woff2'),
+        url('/nbr/fonts/Metropolis-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('/nbr/fonts/Metropolis-Medium.woff2') format('woff2'),
+        url('/nbr/fonts/Metropolis-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('/nbr/fonts/Metropolis-Bold.woff2') format('woff2'),
+        url('/nbr/fonts/Metropolis-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+/***************************************************
+ Geral
+***************************************************/
+
+body {
+    font-family: "Metropolis";
+    background-image: url('../bg-nbr.png');
+    background-position: center top;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#visual-portal-wrapper {
+
+}
+
+#portal-column-content {
+  min-height: 28em;
+  width: 72.75%;
+  margin-left: -86.375%;
+}
+
+#category a.link-category {
+  color: #34003c;
+  background-color: transparent;
+  border: 1px solid #34003c;
+}
+
+#category a.link-category:hover {
+  color: #00d4e1;
+  background-color: #34003c;
+  border: 1px solid #34003c;
+}
+
+#category {
+  color: #34003c;
+  text-align: left;
+  max-width: 720px;
+  margin: 5em auto 1em !important;
+}
+
+#portal-breadcrumbs a {
+  color: #34003c;
+}
+
+h1 {
+  color: #34003c;
+  font-size: 3em;
+  line-height: 1.2em;
+  margin-bottom: 0.2em;
+  font-style: italic;
+}
+
+.documentDescription {
+  color: #212121 !important;
+  margin-left: 0;
+  font-size: 1.7em !important;
+  font-weight: normal !important;
+  margin-bottom: 1em;
+}
+
+.pagination {
+  font-size: 1.2em !important;
+}
+
+#content .pagination a {
+  color: #34003c !important;
+}
+
+#content .pagination a:hover {
+  color: #00d4e1 !important;
+  background-color: #34003c !important;
+}
+
+
+/***************************************************
+ Topo
+***************************************************/
+
+#portal-top {
+  background-color: #34003c;
+  height: 8em;
+  margin-bottom: 2em;
+}
+
+#portal-top .width-full {
+  width: 100%;
+  margin-left: -100%;
+}
+
+#portal-header {
+  height: 2em;
+}
+
+#portal-logo {
+  margin: 2em 0 0 10em;
+  margin-bottom: 2em;
+  position:relative;
+  z-index: 999;
+}
+
+/***************************************************
+ Menu horizontal
+***************************************************/
+
+#portal-globalnav {
+  float: right;
+  margin: -4em 10em 0 0;
+  background: transparent !important;
+}
+
+#portal-globalnav li a {
+  background-color: transparent !important;
+  border: none;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 0 1em;
+  min-width: inherit;
+}
+
+#portal-globalnav .selected a {
+  color: #00d4e1;
+}
+
+#portal-globalnav a:hover,
+#portal-globalnav .selected a:hover {
+  color: #aa075a;
+}
+
+/***************************************************
+ Menu vertical
+***************************************************/
+
+.portletNavigationTree {
+  margin-top: 2.5em !important;
+}
+
+.navTree {
+  border: 0.1em solid #ddd;
+  border-top: none;
+}
+
+dl.portlet ul.navTreeLevel0 > .navTreeItem {
+    padding: 0.25em 1em;
+    border-bottom: 0.1em solid #ddd;
+    line-height: 2.3em;
+    margin-bottom: 0;
+}
+
+dl.portlet ul.navTreeLevel0 > .navTreeItem:last-child {
+  border-bottom: 0px;
+}
+
+dl.portlet a,
+dl.portlet a:link,
+dl.portlet a:visited,
+dl.portlet a:hover  {
+    color: #34003c !important;
+    font-size: 1.2em;
+}
+
+.portletNavigationTree .portletHeader {
+  background-color: #aa075a;
+}
+
+dl.portlet ul.navTreeLevel0 > .navTreeItem:hover {
+  background-color: #00d4e1;
+}
+
+dl.portlet ul.navTree .navTreeCurrentItem {
+  background-color: transparent;
+}
+
+dl.portlet ul.navTree .navTreeCurrentItem {
+    background-color: transparent;
+    border-left: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+dl.portlet ul.navTree .navTreeCurrentNode {
+  background-color: #34003c;
+  color: #00d4e1 !important;
+  font-weight: bold;
+}
+
+/***************************************************
+ Busca
+***************************************************/
+
+#portal-searchbox {
+  background-color: #00d4e1;
+  float: left;
+  text-align: right;
+  margin: -1em 0 0 0;
+  width: 100%;
+}
+
+#portal-searchbox .searchSection {
+  display: none;
+}
+
+#portal-searchbox .LSBox {
+  text-align: right;
+  padding: 0.3em 0;
+  margin-right: 10em;
+}
+
+#searchGadget, .LSBox input.searchButton {
+  height: 2em;
+}
+
+#searchGadget {
+    width: 25em;
+    height: 2em;
+}
+
+
+/***************************************************
+ Rodapé
+***************************************************/
+
+#portal-footer-wrapper  .width-full {
+  width: 100%;
+  margin-left: -100%;
+}
+
+#portal-footer {
+  background-color: #00d4e1;
+  margin: 1em 0 0 0;
+  height: 15em;
+  color: #34003c;
+}
+
+#portal-colophon {
+  background-color: #00d4e1;
+}
+
+#portal-footer .lista li{
+    display: list-item;
+}
+
+#portal-footer .redes li{
+    padding-right: 1em;
+}
+
+#portal-footer a {
+  color: #34003c;
+  font-size: 1.3em;
+}
+
+#portal-footer a:hover {
+  text-decoration: underline;
+}
+
+#portal-footer h2 {
+  color: #34003c;
+  font-size: 2em;
+  padding-bottom: 0.5em;
+  font-style: italic;
+}
+
+
+/***************************************************
+ tpl_youtube_view | tpl_itvp_view
+***************************************************/
+
+.template-tpl_itvp_view #content,
+.template-tpl_youtube_view #content {
+  text-align: center;
+}
+
+.template-tpl_itvp_view h1,
+.template-tpl_youtube_view h1 {
+  color: #34003c;
+  max-width: 720px;
+  font-size: 3em;
+  line-height: 1.2em;
+  margin: 1em auto 1em !important;
+}
+
+.template-tpl_itvp_view .descricao,
+.template-tpl_youtube_view .descricao {
+  max-width: 720px;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  margin: 0 auto;
+}
+
+
+/***************************************************
+ tpl_noar
+***************************************************/
+
+#playerNoAr,
+#my-video {
+  width: 720px;
+  margin: 0 auto 3em;
+}
+
+.template-tpl_noar h1 {
+  color: #34003c;
+  max-width: 720px;
+  font-size: 3em;
+  line-height: 1.2em;
+  margin: 1em auto 0em !important;
+}
+
+#incorporar {
+  max-width: 720px;
+  margin: 1em auto 3em !important;
+  font-size: 1.2em;
+  border: 0px;
+}
+
+#incorporar h3 {
+  color: #34003c;
+}
+
+#incorporar p {
+  margin-bottom: 0;
+}
+
+#incorporar textarea {
+  margin-top: 0.7em;
+  width: 97%;
+  background-color: #34003c;
+  color: #fff;
+  resize: none;
+  padding: 0.5em;
+  border: 0;
+  border-left: 0.7em solid #00d4e1;
+  line-height: 1.5em;
+}
+
+.vjs-default-skin .vjs-big-play-button {
+    left: 40% !important;
+    top: 40%  !important;
+}
+
+
+/***************************************************
+ tpl_programas / tpl_programa / tpl_evento
+***************************************************/
+
+.template-tpl_programas #portal-column-content,
+.template-tpl_programa #portal-column-content,
+.template-tpl_eventos #portal-column-content,
+.template-tpl_evento #portal-column-content {
+  width: 66.5%;
+  margin-left: -73.875%;
+}
+
+.template-tpl_programas #portal-column-one,
+.template-tpl_programa #portal-column-one,
+.template-tpl_eventos #portal-column-one,
+.template-tpl_evento #portal-column-one {
+  width: 16.5%;
+  margin-left: -92.625%;
+}
+
+/***************************************************
+ tpl_programa / tpl_evento
+***************************************************/
+
+#programa {
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  grid-gap: 1.5em;
+}
+
+#programa a {
+  border-bottom: none !important;
+  color: #212121 !important;
+}
+
+#programa a:hover {
+  color: #212121 !important;
+
+}
+
+.item {
+  background-color: #f7f7f7;
+  font-size: 1.2em;
+}
+
+.thumbVideo {
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  border-bottom: 5px solid #aa075a;
+
+}
+
+.thumbVideo img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.thumbVideo img:hover {
+  transform: scale(1.01);
+  transition: all .2s ease-in-out;
+  filter: url('#duotone_peachypink');
+}
+
+.item p {
+  padding: 0.2em 0.5em 0em;
+}
+
+.item .data {
+  font-size: 0.7em;
+}
+
+.item .titulo {
+  font-weight: normal;
+}
+
+#banner {
+  width: 95%;
+  background-color: #34003c;
+  border-left: 1em solid #00d4e1;
+  padding: 1em;
+  margin-bottom: 2em;
+  display: none;
+}
+
+#banner .titulo {
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: bold;
+  line-height: 1.3em;
+  margin-bottom: 0;
+}
+
+#banner .descricao {
+  color: #fff;
+  font-size: 1.2em;
+  margin: 0.3em 0 0.5em 0;
+}
+
+#banner .formulario {
+  margin: 0.3em 0 0 0;
+  line-height: 3em;
+}
+
+#banner .formulario a {
+  background-color: #00d4e1;
+  padding: 0.7em;
+  font-size: 1em;
+  font-weight: bold;
+  border-bottom: 0;
+  color: #34003c !important;
+}
+
+.subsection-download #banner {
+  display: block;
+}
+
+
+/***************************************************
+ cadastro
+***************************************************/
+
+.template-cadastro .descricao {
+  margin: 1em 0;
+  font-size: 1.8em;
+}
+
+
+.template-cadastro label {
+  font-size: 1.3em;
+  font-family:
+}
+
+.template-cadastro .formHelp {
+  color: #212121;
+}
+
+.template-cadastro .fieldRequired {
+  color: transparent;
+}
+
+.template-cadastro .field input[type="text"] {
+    width: 20em;
+    font-size: 1.5em;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    background-color: #fff;
+    border: 1px solid #34003c;
+}
+
+.template-cadastro .context  {
+  height: 2em;
+  width: 4em;
+  background-color: #34003c;
+  color: #00d4e1;
+  border: none;
+  font-size: 1.5em;
+
+
+}
+
+
+
+/***************************************************
+ capa
+***************************************************/
+
+.template-tpl_capa .esquerda {
+  width:    64.42%;
+  float: left;
+
+}
+
+.template-tpl_capa .direita {
+  width:   31.08%;
+  margin-left:    -32.205%;
+  float: right;
+}
+
+.template-tpl_capa #download {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-gap: 1.5em;
+}
+
+
+.template-tpl_capa #aovivo {
+  background-color: #f7f7f7;
+  margin-bottom: 1em;
+}
+
+.template-tpl_capa #aovivo h1 {
+  padding: 0 0.5em;
+}
+
+.template-tpl_capa .thumbVideoCapa {
+  width: 100%;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background: white;
+  position: relative;
+
+}
+
+.template-tpl_capa .thumbVideoCapa iframe {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.template-tpl_capa #destaque {
+  width: 100%;
+  background-color: #34003c;
+  text-align: center;
+}
+
+.template-tpl_capa .documentFirstHeading,
+.template-tpl_capa #viewlet-above-content,
+.template-tpl_capa #viewlet-below-content-title {
+  display: none;
+}
+
+.template-tpl_capa #content {
+    margin-top: 0em;
+}
+
+.template-tpl_capa #portal-top {
+    margin-bottom: 1.7em;
+}
+
+#destaque {
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#destaque .video {
+  width: 50%;
+  float: left;
+  text-align: right;
+  padding: 1%;
+  margin: auto;
+  margin-left: 5%;
+}
+
+#destaque .titulo{
+  margin-right: 5%;
+  width: 38%;
+  float: right;
+}
+
+#destaque .video img {
+  max-width: 576px;
+  width: 100%;
+  max-height: 324px;
+}
+
+#destaque .titulo .data {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #fff;
+  text-align: left;
+  line-height: 1em;
+  width: 100%;
+  margin-top: 35%;
+}
+
+#destaque .titulo .texto {
+  font-size: 2.3em;
+  font-weight: bold;
+  color: #fff;
+  text-align: left;
+  line-height: 1.2em;
+  width: 100%;
+}
+
+#destaque .titulo .texto a {
+  border-bottom: none;
+  color: #fff;
+}
+
+#destaque .titulo .texto a:hover {
+  color: #00d4e1 !important;
+}

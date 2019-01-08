@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:tal="http://xml.zope.org/namespaces/tal"
+xmlns:metal="http://xml.zope.org/namespaces/metal"
+xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+i18n:domain="plone">
+
+<body>
+    <div metal:define-macro="portlet"
+         tal:define="isAnon context/@@plone_portal_state/anonymous;">
+
+      <div class="botaoPortlet" tal:condition="not:isAnon">
+          <a tal:attributes="href string:${context/portal_url}/itvp/@@itvp_view">
+              Importar vídeos do ITVP
+          </a>
+      </div>
+
+    </div>
+</body>
+
+</html>

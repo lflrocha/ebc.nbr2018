@@ -59,7 +59,6 @@ VideodoITVPSchema['contributors'].widget.visible = {"edit": "invisible", "view":
 VideodoITVPSchema['rights'].widget.visible = {"edit": "invisible", "view": "invisible"}
 VideodoITVPSchema['allowDiscussion'].widget.visible = {"edit": "invisible", "view": "invisible"}
 VideodoITVPSchema['excludeFromNav'].widget.visible = {"edit": "invisible", "view": "invisible"}
-VideodoITVPSchema['subject'].widget.visible = {"edit": "invisible", "view": "invisible"}
 VideodoITVPSchema['relatedItems'].widget.visible = {"edit": "invisible", "view": "invisible"}
 
 schemata.finalizeATCTSchema(VideodoITVPSchema, moveDiscussion=False)
@@ -78,5 +77,14 @@ class VideodoITVP(base.ATCTContent):
     videoid = atapi.ATFieldProperty('videoid')
     thumbnail = atapi.ATFieldProperty('thumbnail')
     descricao = atapi.ATFieldProperty('descricao')
+
+
+    def getItvpLink(self):
+        videoid = self.getVideoid()
+        print videoid
+        flash = str(int(videoid) + 11)
+        src = '<source src="http://df.itvrp.ebc.com.br:9998/TVBRASIL.EBC-DF.' + flash + '" type="video/x-flv" />'
+        return src
+
 
 atapi.registerType(VideodoITVP, PROJECTNAME)

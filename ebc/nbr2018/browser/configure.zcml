@@ -15,5 +15,11 @@
       class=".youtube.YoutubeView"
       />
 
+  <browser:page
+      name="itvp_view"
+      for="*"
+      permission="zope2.View"
+      class=".itvp.ItvpView"
+      />
 
 </configure>

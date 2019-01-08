@@ -11,21 +11,20 @@
     <metal:content-core define-macro="content-core">
 
 
-        <metal:field use-macro="python:context.widget('descricao', mode='view')">
-            Body text
-        </metal:field>
+      <div metal:define-macro="text-field-view">
 
-        <br /><br />
+      <div id="youtubeView">
 
-        <iframe width="560" height="315" src="rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+        <iframe width="720" height="405" src="rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
                 tal:attributes="src string:https://www.youtube.com/embed/${here/getVideoid}?rel=0&amp;showinfo=0"></iframe>
-
-        <br /><br />
-
-
-        <metal:field use-macro="python:context.widget('subject', mode='view')">
-            Body text
-        </metal:field>
+        <br />
+        <div class="descricao">
+          <metal:field use-macro="python:context.widget('descricao', mode='view')">
+              Body text
+            </metal:field>
+        </div>
+      </div>
+    </div>
 
 
     </metal:content-core>

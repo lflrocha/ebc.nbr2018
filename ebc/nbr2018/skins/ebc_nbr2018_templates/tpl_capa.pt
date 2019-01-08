@@ -1,0 +1,162 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+  <div metal:fill-slot="content-core">
+    <metal:block define-macro="content-core"
+                 tal:define="kssClassesView context/@@kss_field_decorator_view;
+                             getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                             templateId template/getId">
+
+
+      <div id="destaque" tal:define="manchete context/capa/getManchete;
+                                     conteudo  context/capa/getConteudo;
+                                     data context/capa/getData;
+                                     thumb context/capa/getThumb;
+                                     link context/capa/getLink">
+        <div class="video">
+          <a href="#" tal:attributes="href link">
+            <img tal:attributes="src thumb" />
+          </a>
+        </div>
+        <div class="titulo">
+          <p class="data" tal:content="data"></p>
+          <p class="texto">
+            <a href="#" tal:content="manchete" tal:attributes="href link">
+              Preparativos para a posse do presidente eleito Jair Bolsonaro
+            </a>
+          </p>
+        </div>
+      </div>
+
+     <div class="visualClear"><!-- --></div>
+
+
+      <div class="esquerda">
+
+      <metal:listingmacro define-macro="listing">
+        <tal:results define="batch python:context.getDownloads();
+                             toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                             navigation_root_url context/@@plone_portal_state/navigation_root_url;">
+
+        <tal:listing condition="batch">
+          <h1>Conteúdo para download</h1>
+          <dl metal:define-slot="entries" id="download">
+            <tal:entry tal:repeat="item batch" metal:define-macro="entries">
+              <tal:block tal:define="item_url item/getURL;
+                                     item_id item/getId;
+                                     item_description item/Description;
+                                     item_modified item/ModificationDate;
+                                     item_created item/CreationDate;
+                                     item_videoid item/videoid">
+                  <metal:block define-slot="entry">
+                    <dt metal:define-macro="listitem"  class="item">
+                      <div class="thumbVideo">
+                        <a href="#" tal:attributes="href python:item_url+'/view' or item_url">
+                          <img tal:attributes="src string:http://df.itvrp.ebc.com.br:80/thumb?vspace=145350781&cid=$item_videoid&node=EBC-DF&domain=TVBRASIL&selected_page=1&all_vs=false" />
+                        </a>
+                      </div>
+                      <p>
+                        <span class="data" tal:content="python:toLocalizedTime(item_created,long_format=1)">August 16, 2001 at 23:35:59</span>
+                         <br>
+                        <span class="titulo" tal:content="item/Title" />
+                      </p>
+                    </dt>
+                  </metal:block>
+              </tal:block>
+            </tal:entry>
+          </dl>
+        </tal:listing>
+        </tal:results>
+      </metal:listingmacro>
+
+    </div>
+
+
+    <div class="direita">
+      <div id="aovivo" >
+        <h1>
+          NBR no ar
+        </h1>
+        <div class="thumbVideoCapa">
+          <iframe src="http://nbr.gov.br/streaming/nbr-include" scrolling="no" frameborder="0"></iframe>
+        </div>
+      </div>
+
+      <a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#34003c" href="https://twitter.com/TVNBR?ref_src=twsrc%5Etfw">Tweets by TVNBR</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    </div>
+
+
+
+
+    <div class="visualClear"><!-- --></div>
+
+      <metal:listingmacro define-macro="listing2">
+        <tal:results define="batch python:context.getUltimos();
+                             toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                             navigation_root_url context/@@plone_portal_state/navigation_root_url;">
+
+        <tal:listing condition="batch">
+          <h1>Últimos conteúdos</h1>
+          <dl metal:define-slot="entries" id="programa">
+            <tal:entry tal:repeat="item batch" metal:define-macro="entries2">
+              <tal:block tal:define="item_url item/getURL;
+                                     item_id item/getId;
+                                     item_description item/Description;
+                                     item_modified item/ModificationDate;
+                                     item_created item/CreationDate;
+                                     item_videoid item/videoid">
+                  <metal:block define-slot="entry2">
+                    <dt metal:define-macro="listitem2"  class="item">
+                      <div class="thumbVideo">
+                        <a href="#" tal:attributes="href python:item_url+'/view' or item_url">
+                          <img tal:attributes="src string:https://img.youtube.com/vi/$item_videoid/maxresdefault.jpg" />
+                        </a>
+                      </div>
+                      <p>
+                        <span class="data" tal:content="python:toLocalizedTime(item_created,long_format=1)">August 16, 2001 at 23:35:59</span>
+                         <br>
+                        <span class="titulo" tal:content="item/Title" />
+                      </p>
+                    </dt>
+                  </metal:block>
+              </tal:block>
+            </tal:entry>
+          </dl>
+        </tal:listing>
+        </tal:results>
+      </metal:listingmacro>
+
+
+
+
+
+
+
+
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="duotone_peachypink">
+          <feColorMatrix type="matrix" result="grayscale"
+            values="1 0 0 0 0
+                    1 0 0 0 0
+                    1 0 0 0 0
+                    0 0 0 1 0" >
+          </feColorMatrix>
+          <feComponentTransfer color-interpolation-filters="sRGB" result="duotone">
+            <feFuncR type="table" tableValues="0.0863 0.0941 "></feFuncR>
+            <feFuncG type="table" tableValues="0.0824 0.8000 "></feFuncG>
+            <feFuncB type="table" tableValues="0.2980 0.8549 "></feFuncB>
+            <feFuncA type="table" tableValues="0 1"></feFuncA>
+          </feComponentTransfer>
+        </filter>
+      </svg>
+    </metal:block>
+  </div>
+</body>
+</html>
