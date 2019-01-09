@@ -20,7 +20,7 @@ class YoutubeJsonView(BrowserView):
 
     def getYoutubeJson(self):
         pc = getToolByName(self, 'portal_catalog')
-        videos = pc.searchResults(meta_type="Videodoyoutube", review_state="published", sort_on='created', sort_order='reverse')
+        videos = pc.searchResults(meta_type="Videodoyoutube", review_state="published", sort_on='created', sort_order='reverse')[:50]
         vet = []
         for item in videos:
             obj = item.getObject()
