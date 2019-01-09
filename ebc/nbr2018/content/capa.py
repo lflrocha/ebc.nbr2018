@@ -26,7 +26,7 @@ CapaSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
         widget=atapi.StringWidget(
             label=_(u"Manchete"),
             description=_(u"Escreva a manchete"),
-            maxlength=70
+            maxlength=90
         ),
         required=True,
     ),
@@ -53,6 +53,19 @@ CapaSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
 
 CapaSchema['title'].storage = atapi.AnnotationStorage()
 CapaSchema['description'].storage = atapi.AnnotationStorage()
+CapaSchema['description'].widget.visible = {"edit": "invisible", "view": "invisible"}
+CapaSchema['location'].widget.visible = {"edit": "invisible", "view": "invisible"}
+CapaSchema['language'].widget.visible = {"edit": "invisible", "view": "invisible"}
+CapaSchema['effectiveDate'].widget.visible = {"edit": "invisible", "view": "invisible"}
+CapaSchema['expirationDate'].widget.visible = {"edit": "invisible", "view": "invisible"}
+CapaSchema['creators'].widget.visible = {"edit": "invisible", "view": "invisible"}
+CapaSchema['contributors'].widget.visible = {"edit": "invisible", "view": "invisible"}
+CapaSchema['rights'].widget.visible = {"edit": "invisible", "view": "invisible"}
+CapaSchema['allowDiscussion'].widget.visible = {"edit": "invisible", "view": "invisible"}
+CapaSchema['excludeFromNav'].widget.visible = {"edit": "invisible", "view": "invisible"}
+CapaSchema['relatedItems'].widget.visible = {"edit": "invisible", "view": "invisible"}
+
+
 
 schemata.finalizeATCTSchema(CapaSchema, moveDiscussion=False)
 

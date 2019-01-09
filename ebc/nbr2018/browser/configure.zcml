@@ -22,4 +22,12 @@
       class=".itvp.ItvpView"
       />
 
+      <browser:page
+          name="youtubejson_view"
+          for="*"
+          permission="zope2.View"
+          class=".youtubeJson.YoutubeJsonView"
+          />
+
+
 </configure>

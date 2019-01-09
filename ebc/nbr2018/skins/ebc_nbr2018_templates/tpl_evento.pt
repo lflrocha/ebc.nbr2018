@@ -41,9 +41,9 @@
         <tal:listing condition="batch">
 
           <div id="banner">
-            <p class="titulo">Cadastre-se</p>
-            <p class="descricao">Baixe aqui gratuitamente os conteúdos audiovisuais do governo federal. Tenha acesso aos eventos e coletivas na íntegra e sonoras de autoridades do Poder Executivo Federal. Para fazer o download é preciso se cadastrar.</p>
-            <p class="formulario"><a href="#" tal:attributes="href string:${context/portal_url}/cadastro">Crie seu login</a></p>
+            <p class="titulo">Download</p>
+            <p class="descricao">Baixe aqui gratuitamente os conteúdos audiovisuais do governo federal. Tenha acesso aos eventos e coletivas na íntegra e sonoras de autoridades do Poder Executivo Federal. <!-- Para fazer o download é preciso se cadastrar. --></p>
+            <!-- <p class="formulario"><a href="#" tal:attributes="href string:${context/portal_url}/cadastro">Crie seu login</a></p>-->
           </div>
 
             <dl metal:define-slot="entries" id="programa">

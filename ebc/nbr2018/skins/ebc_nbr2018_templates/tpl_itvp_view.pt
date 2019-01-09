@@ -23,8 +23,8 @@
           <div tal:replace="structure context/getItvpLink" />
         </video>
 
-      <p>Para fazer o download, faça seu <a href="#" tal:attributes="href string:${context/portal_url}/cadastro" target="_blank">cadastro</a>. Se você já tem usuário e senha, clique
-<a tal:attributes="href string:http://df.itvrp.ebc.com.br:9998/TVBRASIL.EBC-DF.$download">aqui</a>.</p>
+        <p class="download">Para fazer o download do vídeo em qualidade alta <!-- faça seu <a href="#" tal:attributes="href string:${context/portal_url}/cadastro" target="_blank">cadastro</a>. Se você já tem usuário e senha,--> clique no botão abaixo
+        <p class="formulario"><a tal:attributes="href string:http://df.itvrp.ebc.com.br:9998/TVBRASIL.EBC-DF.$download">download</a></p>
       </tal:def>
     </metal:content-core>
 </metal:content-core>

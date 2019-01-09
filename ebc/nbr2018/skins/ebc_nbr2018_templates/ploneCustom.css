@@ -127,6 +127,9 @@ h1 {
   background-color: #34003c !important;
 }
 
+#portal-column-one {
+    width: 10% !important;
+}
 
 /***************************************************
  Topo
@@ -344,6 +347,16 @@ dl.portlet ul.navTree .navTreeCurrentNode {
 }
 
 
+.template-tpl_itvp_view .formulario a {
+  background-color: #00d4e1;
+  padding: 0.7em;
+  font-size: 1em;
+  font-weight: bold;
+  border-bottom: 0;
+  color: #34003c !important;
+}
+
+
 /***************************************************
  tpl_noar
 ***************************************************/
@@ -394,6 +407,10 @@ dl.portlet ul.navTree .navTreeCurrentNode {
     top: 40%  !important;
 }
 
+.inner header {
+  padding-top: 0;
+}
+
 
 /***************************************************
  tpl_programas / tpl_programa / tpl_evento
@@ -411,7 +428,7 @@ dl.portlet ul.navTree .navTreeCurrentNode {
 .template-tpl_programa #portal-column-one,
 .template-tpl_eventos #portal-column-one,
 .template-tpl_evento #portal-column-one {
-  width: 16.5%;
+  width: 16.5% !important;
   margin-left: -92.625%;
 }
 
@@ -643,7 +660,6 @@ textarea:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 #destaque .video {
@@ -660,7 +676,6 @@ textarea:focus {
   width: 38%;
   float: right;
 }
-
 #destaque .video img {
   max-width: 576px;
   width: 100%;
@@ -694,3 +709,7 @@ textarea:focus {
 #destaque .titulo .texto a:hover {
   color: #00d4e1 !important;
 }
+
+
+
+/* TABLE PROGRAMAÇÃO */

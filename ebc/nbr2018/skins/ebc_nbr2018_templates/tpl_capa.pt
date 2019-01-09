@@ -25,7 +25,8 @@
           </a>
         </div>
         <div class="titulo">
-          <p class="data" tal:content="data"></p>
+          <!--<p class="data" tal:content="data"></p>-->
+          <p class="data"> </p>
           <p class="texto">
             <a href="#" tal:content="manchete" tal:attributes="href link">
               Preparativos para a posse do presidente eleito Jair Bolsonaro
@@ -103,7 +104,7 @@
                              navigation_root_url context/@@plone_portal_state/navigation_root_url;">
 
         <tal:listing condition="batch">
-          <h1>Últimos conteúdos</h1>
+          <h1>Conteúdos recentes</h1>
           <dl metal:define-slot="entries" id="programa">
             <tal:entry tal:repeat="item batch" metal:define-macro="entries2">
               <tal:block tal:define="item_url item/getURL;
