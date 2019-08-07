@@ -28,7 +28,7 @@ class ItvpView(BrowserView):
         videos = feed.split('<item>')
         vet = []
         for video in videos:
-            
+
             titulo = ''
             descricao = ''
             link = ''
@@ -56,7 +56,7 @@ class ItvpView(BrowserView):
         """Return a catalog search result of sessions to show."""
 
         context = aq_inner(self.context)
-        rss = "http://200.17.0.2/feed?vspace=145350781&all_vs=false"
+        rss = "http://200.17.0.2/feed?vspace=65798052&all_vs=false"
         videos = self.getVideosItvp(rss)
         total = 0
         for video in videos:
