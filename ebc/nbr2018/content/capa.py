@@ -41,7 +41,7 @@ CapaSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
         ),
         required=True,
         relationship='capa_conteudo',
-        allowed_types=('Video do youtube'), # specify portal type names here ('Example Type',)
+        allowed_types=('Video do ITVP'), # specify portal type names here ('Example Type',)
         multiValued=False,
     ),
 
@@ -93,7 +93,8 @@ class Capa(base.ATCTContent):
     def getThumb(self):
         aux = self.getConteudo()
         videoId = aux.getVideoid()
-        thumb = "https://img.youtube.com/vi/%s/maxresdefault.jpg" % videoId
+        thumb = aux.getThumbnail()
+        thumb = "http://df.itvrp.ebc.com.br/thumb?vspace=145350781&cid=%s&node=EBC-DF&domain=TVBRASIL&selected_page=1&all_vs=false" % thumb
         return thumb
 
     def getLink(self):
