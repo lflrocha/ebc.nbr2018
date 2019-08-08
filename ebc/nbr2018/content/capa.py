@@ -94,7 +94,7 @@ class Capa(base.ATCTContent):
         aux = self.getConteudo()
         videoId = aux.getVideoid()
         thumb = aux.getThumbnail()
-        thumb = "http://df.itvrp.ebc.com.br/thumb?vspace=145350781&cid=%s&node=EBC-DF&domain=TVBRASIL&selected_page=1&all_vs=false" % thumb
+        thumb = "http://df.itvrp.ebc.com.br/thumb?vspace=65798052&cid=%s&node=EBC-DF&domain=TVBRASIL&selected_page=1&all_vs=false" % thumb
         return thumb
 
     def getLink(self):
